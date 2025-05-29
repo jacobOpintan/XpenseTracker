@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yy3b6FkcfU8=",
+  "dgSpecHash": "C6l/a2Otl7g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
