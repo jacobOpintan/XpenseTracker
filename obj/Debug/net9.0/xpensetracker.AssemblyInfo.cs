@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("xpensetracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+221871e0de2effe8ee366bf5b10c4ff36199c86b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65e177b0ba17d9a5c252f38a1f786611b3f06389")]
 [assembly: System.Reflection.AssemblyProductAttribute("xpensetracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("xpensetracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
