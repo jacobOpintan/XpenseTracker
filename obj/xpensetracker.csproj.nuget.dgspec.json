@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj": {}
+    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj": {
+    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj",
         "projectName": "xpensetracker",
-        "projectPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj",
+        "projectPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -72,6 +72,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.11.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.11.0, )"
             }
           },
           "imports": [

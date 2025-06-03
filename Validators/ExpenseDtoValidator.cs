@@ -16,7 +16,7 @@ namespace XpenseTracker.Validators
     {
         RuleFor(e => e.Title)
             .NotEmpty().WithMessage("Title is required")
-            .MaximumLength(150).WithMessage("Title must be under 150 characters");
+            .MaximumLength(150).MinimumLength(3).WithMessage("Title must be under 150 characters");
 
         RuleFor(e => e.Amount)
             .GreaterThan(0).WithMessage("Amount must be greater than 0");

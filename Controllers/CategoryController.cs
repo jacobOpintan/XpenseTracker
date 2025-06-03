@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using XpenseTracker.Data;
+using XpenseTracker.Dtos;
 
 namespace XpenseTracker.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/category")]
 [ApiController]
 public class CategoryController : Controller
 {
@@ -27,11 +28,12 @@ public class CategoryController : Controller
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
     {
+        _logger.LogInformation("Request made to retrieve all categories");
         return await _context.Categories.ToListAsync();
     }
     // Get : api/category/ id get category by id
     [HttpGet("{id}")]
-    public async Task<ActionResult<Category>> GetCategoryById(int id)
+    public async Task<ActionResult<Category>> GetCategoryById(int id,CategoryDto categoryDto)
     {
         var category = await _context.Categories.FindAsync(id);
         if (category == null)
@@ -43,8 +45,10 @@ public class CategoryController : Controller
     }
 
     //Post : api/category 
-    public async Task<ActionResult<Category>> PostCategory(Category category)
+    public async Task<ActionResult<Category>> CreateCategory([FromBody]CategoryDto categoryDto)
     {
+        var category = new Category { Name =categoryDto.Name};
+
         if (category == null)
         {
             return BadRequest("Category cannot be Empty");
@@ -56,9 +60,9 @@ public class CategoryController : Controller
 
     // put : api/category/id
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutCategory(int id, Category category)
+    public async Task<IActionResult> UpdateCategory(int id, Category category)
     {
-        if (!id = category.Id)
+        if (id != category.Id)
         {
             return BadRequest("Category Id mismatch");
         }
@@ -101,5 +105,5 @@ public class CategoryController : Controller
 
 
 
-    
+
 }
