@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj": {}
+    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj": {
+    "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj",
         "projectName": "xpensetracker",
-        "projectPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\xpensetracker.csproj",
+        "projectPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\xpensetracker.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\xpensetracker\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\BckEndAspNetProj\\XpensTracker\\XpenseTracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -54,6 +54,10 @@
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.12.1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using XpenseTracker.Data;
+using XpenseTracker.Helpers;
 using XpenseTracker.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,6 +53,9 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
+
+//registering mailkit service
+builder.Services.AddScoped<MailHelper>();
 
 
 
