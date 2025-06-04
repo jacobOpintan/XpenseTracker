@@ -119,9 +119,64 @@ public class AuthController : ControllerBase
         var token = await GenerateJwtToken(user);
         return Ok(new { token });
     }
+
+    //endpoint for forgot password 
+    [HttpPost("forgot-password")]
+    [AllowAnonymous]
+    public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var user = await _userManager.FindByEmailAsync(model.Email);
+        if (user == null)
+        {
+            return Ok(new {message ="If an account with that email exists, a password reset link will be sent."});
+        }
+
+        // Generate password reset token
+        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        var encodedToken = HttpUtility.UrlEncode(token);
+        var resetLink = $"{Request.Scheme}://{Request.Host}/api/auth/reset-password?email={model.Email}&token={encodedToken}";
+
+        // creating email body and subject
+        var emailSubject = "Reset your password";
+        var emailBody = $"<p>Click <a href='{resetLink}'>here</a> to reset your password.</p>";
+
+        // Send email using MailHelper
+        await _mailHelper.SendEmailAsync(model.Email, emailSubject, emailBody);
+
+        return Ok("Password reset link sent to your email.");
+    }
+
+    // endpoint for resetting password
+    [HttpPost("reset-password")]
+    [AllowAnonymous]
+    public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var user = await _userManager.FindByEmailAsync(model.Email);
+        if (user == null)
+        {
+            return BadRequest("Invalid request.");
+        }
+
+        var decodedToken = HttpUtility.UrlDecode(model.Token);
+        var result = await _userManager.ResetPasswordAsync(user, decodedToken, model.NewPassword);
+
+        if (result.Succeeded)
+            return Ok("Password reset successfully.");
+        return BadRequest(result.Errors);
+    }
     
     //generate JWT token
-  private async Task<string> GenerateJwtToken(ApplicationUser user)
+    private async Task<string> GenerateJwtToken(ApplicationUser user)
     {
         var claims = new List<Claim>
             {
