@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using XpenseTracker.Data;
 using XpenseTracker.Dtos;
+using XpenseTracker.Models;
 
 
 namespace XpenseTracker.Controllers
@@ -15,11 +17,22 @@ namespace XpenseTracker.Controllers
     public class ExpenseController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public ExpenseController(ApplicationDbContext context)
+        public ExpenseController(ApplicationDbContext context , UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            this.userManager = userManager;
         }
+
+        // Get the current user's ID
+        private async Task<string> GetUserIdAsync()
+        {
+            var user = await userManager.GetUserAsync(User);
+            return user?.Id!;
+        }
+
+       
 
         [Route("/expense")]
         [HttpGet]
@@ -55,13 +68,15 @@ namespace XpenseTracker.Controllers
             {
                 return BadRequest("Expense data cannot be null.");
             }
+            var userId = await GetUserIdAsync();
 
             var expense = new Expense
             {
                 Amount = expenseDto.Amount,
                 Description = expenseDto.Description,
                 Date = expenseDto.Date,
-                CategoryId = expenseDto.CategoryId
+                CategoryId = expenseDto.CategoryId,
+                UserId=userId
             };
 
             _context.Expenses.Add(expense);

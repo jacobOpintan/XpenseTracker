@@ -24,8 +24,17 @@ public class SummaryController : ControllerBase
         _userManager = userManager;
     }
 
-    private async Task<string> GetUserIdAsync() =>
-        (await _userManager.GetUserAsync(User))?.Id!;
+    private async Task<string> GetUserIdAsync()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            throw new UnauthorizedAccessException("User not found.");
+        }
+
+        return user.Id!;
+    }
+
 
     [HttpGet("monthly")]
     public async Task<IActionResult> GetMonthlySummary()

@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using XpenseTracker.Data;
 using XpenseTracker.Helpers;
 using XpenseTracker.Models;
+using XpenseTracker.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,6 +58,8 @@ builder.Services.AddAuthentication(options =>
 //registering mailkit service
 builder.Services.AddScoped<MailHelper>();
 
+// registering the expense service
+builder.Services.AddScoped<IExpenseService, ExpenseService>();
 
 
 var app = builder.Build();

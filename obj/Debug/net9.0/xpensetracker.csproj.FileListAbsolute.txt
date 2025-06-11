@@ -171,3 +171,6 @@ C:\Users\HP\Documents\BckEndAspNetProj\XpensTracker\xpensetracker\bin\Debug\net9
 C:\Users\HP\Documents\BckEndAspNetProj\XpensTracker\xpensetracker\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
 C:\Users\HP\Documents\BckEndAspNetProj\XpensTracker\xpensetracker\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\HP\Documents\BckEndAspNetProj\XpensTracker\xpensetracker\obj\Debug\net9.0\xpensetracker.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\HP\Documents\BckEndAspNetProj\XpensTracker\xpensetracker\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+C:\Users\HP\Documents\BckEndAspNetProj\XpensTracker\xpensetracker\bin\Debug\net9.0\MailKit.dll
+C:\Users\HP\Documents\BckEndAspNetProj\XpensTracker\xpensetracker\bin\Debug\net9.0\MimeKit.dll
